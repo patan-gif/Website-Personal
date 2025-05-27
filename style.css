@@ -1,0 +1,409 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar{
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    color: #fbfcfd;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 5px;
+  opacity: 0,7; /* Atur transparansi */
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0,7; /* Efek saat hover */
+}
+
+.content {
+    color: #fbfcfd;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+}
+
+h1{
+    font-size: 80px;
+    margin: 10px 0 30px;
+    line-height: 80px;
+}
+
+.side-bar {
+  width: 60px; /* Naikkan sedikit agar cukup untuk konten */
+  height: 100vh;
+  background: linear-gradient(#00545d, #000729);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* mencegah konten keluar */
+  transition: width 0.3s ease;
+}
+
+.side-bar.open {
+  width: 150px; /* Lebar ketika menu dibuka */
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-items {
+  display: flex; /* sembunyikan di awal */
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%; /* penuh sesuai sidebar */
+  align-items: center;
+}
+
+.menu-items a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  background-color: #017879;
+  border-radius: 5px;
+  text-align: center;
+  width: 100px;
+}
+
+.menu{
+    display: block;
+    width: 25px;
+    margin: 40px auto 0;
+    cursor: pointer;
+}
+
+.social-links img, .another-links img{
+    width: 25px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.social-links{
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.another-links{
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.bubbles img{
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+
+.bubbles{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+}
+
+@keyframes bubble{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+.bubbles img:nth-child(1){
+    animation-delay: 2s;
+    width: 25px;
+}
+
+.bubbles img:nth-child(2){
+    animation-delay: 1s;
+}
+
+.bubbles img:nth-child(3){
+    width: 25px;
+    animation-delay: 3s;
+}
+
+.bubbles img:nth-child(4){
+    animation-delay: 4.5s;
+}
+
+.bubbles img:nth-child(5){
+    animation-delay: 3s;
+}
+
+.bubbles img:nth-child(6){
+    width: 20px;
+    animation-delay: 6s;
+}
+
+.bubbles img:nth-child(7){
+    width: 35px;
+    animation-delay: 7s;
+}
+
+/* === Media Queries untuk Responsif Handphone dan Tablet === */
+
+@media screen and (max-width: 768px) {
+  .content h1 {
+    font-size: 50px;
+    line-height: 55px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+  }
+
+  .side-bar {
+    width: 50px;
+    padding: 5px;
+  }
+
+  .menu-items a {
+    font-size: 12px;
+    width: 80px;
+    padding: 6px 8px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .bubbles img {
+    width: 30px;
+  }
+
+  .bubbles img:nth-child(1),
+  .bubbles img:nth-child(3) {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    top: 35%;
+  }
+
+  .content h1 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .content h2 {
+    font-size: 16px;
+  }
+
+  .button {
+    padding: 8px 20px;
+  }
+
+  .side-bar {
+    width: 40px;
+    padding: 5px 0;
+  }
+
+  .menu-items a {
+    font-size: 11px;
+    width: 70px;
+    padding: 5px 6px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .bubbles img {
+    width: 20px;
+  }
+
+  .bubbles img:nth-child(7) {
+    width: 25px;
+  }
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: #000;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+/* Hover effect on links */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when container has class 'show' */
+.show {
+    display: block;
+ }
+ 
+}
+/* ================= FOOTER ================== */
+.footer {
+ background: url('footer.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'poppins',sans sertif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1 1 300px;
+  margin-bottom: 20px;
+}
+
+.footer-left p {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left img {
+  margin-right: 10px;
+}
+
+.footer-left a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+.footer-right h3 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-right p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: black;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color:black;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    margin-bottom: 30px;
+  }
+}
